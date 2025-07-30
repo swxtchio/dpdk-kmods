@@ -1,7 +1,7 @@
 KSRC ?= /lib/modules/$(shell uname -r)/build
 
 all:
-	make -C $(KSRC)/ M=$(CURDIR)
+	$(MAKE) -C $(KSRC) M=$(PWD) modules
 
-%:
-	make -C $(KSRC)/ M=$(CURDIR) $@
+clean:
+	$(MAKE) -C $(KSRC) M=$(PWD) clean
